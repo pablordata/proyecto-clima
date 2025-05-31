@@ -107,8 +107,10 @@ La interfaz cuenta con un diseño atractivo que utiliza gradientes y un efecto "
 
 Este proyecto es para fines educativos. Puedes usar el código libremente. Si deseas definir una licencia formal, considera una como [MIT](https://opensource.org/licenses/MIT).
 
-## 📸 Screenshot
+## 📸 Screenshot modo Claro & Oscuro
 
 ![Image Alt](https://github.com/pablordata/proyecto-clima/blob/202be952ca89688bacc9214c6a506fd3ed8a507f/assets/tema-claro.png)
+
+![Image Alt](https://github.com/pablordata/proyecto-clima/blob/4108c0d6d32214792a6b569830b135b8b51f4793/assets/tema-oscuro.png)
 
 
