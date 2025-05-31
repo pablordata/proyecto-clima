@@ -1,79 +1,231 @@
 <!DOCTYPE html>
+<!-- 
+    Define el tipo de documento como HTML5. 
+    Es la primera línea obligatoria en cualquier documento HTML5.
+-->
 <html lang="es">
+<!--
+    Elemento raíz de la página HTML.
+    lang="es": Atributo que especifica el idioma principal del contenido de la página como español.
+    Esto es útil para los motores de búsqueda y tecnologías de asistencia.
+-->
 <head>
+    <!--
+        Contiene metadatos sobre el documento HTML, como el título, enlaces a hojas de estilo,
+        scripts, y otra información que no se muestra directamente en la página.
+    -->
     <meta charset="UTF-8">
+    <!--
+        Especifica la codificación de caracteres del documento. UTF-8 es una codificación universal
+        que soporta la mayoría de los caracteres y símbolos, incluyendo acentos y caracteres especiales
+        del español.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        Configura el viewport para el diseño responsive (adaptable a diferentes tamaños de pantalla).
+        width=device-width: Establece el ancho del viewport al ancho del dispositivo.
+        initial-scale=1.0: Establece el nivel de zoom inicial cuando la página se carga por primera vez.
+    -->
     <title>Pronóstico del Tiempo</title>
+    <!--
+        Define el título de la página, que se muestra en la pestaña o barra de título del navegador.
+    -->
     <link rel="stylesheet" href="css/style.css">
+    <!--
+        Vincula una hoja de estilos externa (CSS) al documento HTML.
+        rel="stylesheet": Indica que el archivo vinculado es una hoja de estilos.
+        href="css/style.css": Especifica la ruta al archivo CSS. Se espera que haya una carpeta "css"
+        y dentro de ella un archivo "style.css" que define la apariencia visual de la página.
+    -->
 </head>
 <body>
+    <!--
+        Contiene todo el contenido visible de la página web.
+    -->
     <div class="container">
+        <!--
+            Un div principal que actúa como contenedor para todo el contenido de la página.
+            La clase "container" se usa comúnmente para centrar el contenido o aplicar un ancho máximo.
+        -->
         <header class="header">
+            <!--
+                Elemento semántico que representa la sección de encabezado de la página.
+                La clase "header" puede usarse para aplicar estilos específicos al encabezado.
+            -->
             <button class="theme-toggle" onclick="toggleTheme()" title="Cambiar tema">
+            <!--
+                Un botón para cambiar el tema de la página (por ejemplo, de claro a oscuro).
+                class="theme-toggle": Clase para estilizar el botón.
+                onclick="toggleTheme()": Ejecuta la función JavaScript 'toggleTheme()' cuando se hace clic.
+                title="Cambiar tema": Texto que aparece como tooltip al pasar el cursor sobre el botón.
+            -->
                 <span id="themeIcon">🌙</span>
+                <!--
+                    Un elemento span dentro del botón, utilizado para mostrar un ícono de tema (luna por defecto).
+                    id="themeIcon": Identificador único para que JavaScript pueda cambiar el ícono.
+                -->
             </button>
             
             <h1>🌤️ Pronóstico del Tiempo</h1>
+            <!--
+                El encabezado principal (nivel 1) de la página, con un emoji relacionado con el clima.
+            -->
             
             <div class="professor-info">
+            <!--
+                Un div para mostrar información sobre el profesor.
+                class="professor-info": Clase para estilizar esta sección.
+            -->
                 <div class="professor-photo">
                     MH
+                    <!--
+                        Un div para mostrar la foto o iniciales del profesor. Actualmente muestra "MH".
+                        class="professor-photo": Clase para estilizar esta área (ej. hacerlo circular, añadir fondo).
+                    -->
                 </div>
                 <div class="professor-details">
+                <!--
+                    Un div para los detalles textuales del profesor.
+                    class="professor-details": Clase para estilizar esta sección.
+                -->
                     <div class="professor-name">PROFESORA MARIA HERNANDEZ </div>
+                    <!-- Nombre del profesor. -->
                     <div class="professor-subject">Introduccion A Los Lenguajes De Internet</div>
+                    <!-- Asignatura del profesor. -->
                 </div>
             </div>
 
             <div class="student-section">
+            <!--
+                Un div para mostrar información sobre los estudiantes.
+                class="student-section": Clase para estilizar esta sección.
+            -->
                 <h3 style="color: white; margin-bottom: 15px; font-size: 1.2rem;">👨‍🎓 ESTUDIANTES</h3>
+                <!--
+                    Un encabezado de nivel 3 para la sección de estudiantes, con un emoji.
+                    style="...": Estilos en línea. Generalmente se prefiere usar clases CSS,
+                    pero aquí se aplican directamente: color de texto blanco, margen inferior de 15px
+                    y tamaño de fuente de 1.2rem.
+                -->
                 <div class="students-grid">
+                <!--
+                    Un div que probablemente usa CSS Grid o Flexbox para organizar la información de los estudiantes.
+                    class="students-grid": Clase para aplicar el layout de cuadrícula.
+                -->
                     <div class="student-info">
+                    <!-- Información del primer estudiante. -->
                         <div class="student-photo student-1">
                             PR
+                            <!--
+                                Div para la foto o iniciales del primer estudiante ("PR").
+                                class="student-photo student-1": Clases para estilizar. "student-1" podría ser para
+                                un estilo específico (ej. color de fondo diferente).
+                            -->
                         </div>
                         <div class="student-details">
+                        <!-- Detalles del primer estudiante. -->
                             <div class="student-name">Pablo Rivera</div>
-                            
                         </div>
                     </div>
                     <div class="student-info">
+                    <!-- Información del segundo estudiante. -->
                         <div class="student-photo student-2">
                             RZ
+                            <!--
+                                Div para la foto o iniciales del segundo estudiante ("RZ").
+                                class="student-photo student-2": Clases para estilizar. "student-2" para estilo específico.
+                            -->
                         </div>
                         <div class="student-details">
+                        <!-- Detalles del segundo estudiante. -->
                             <div class="student-name">Robinson Zuñiga</div>
-                            
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="social-links">
-        <!-- Enlace al sitio web -->
-        <a href="https://ucompensar.edu.co/programas/ingenieria-de-software-virtual/" class="social-link" title="Sitio Web" target="_blank" rel="noopener noreferrer">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 13.8h-3.924c-.33 1.96-.78 3.8-1.644 5.29 2.760-1.01 4.84-3.18 5.568-5.29zM12 22.2c-.99-1.805-1.78-4.064-2.133-6.4h4.266c-.353 2.336-1.143 4.595-2.133 6.4zM9.867 13.8c.353-2.335 1.143-4.595 2.133-6.4.99 1.805 1.78 4.065 2.133 6.4H9.867zm-1.511 2c-.864-1.49-1.314-3.33-1.644-5.29H2.788c.728 2.11 2.808 4.28 5.568 5.29zm-5.568-7.29h3.924c.33-1.96.78-3.8 1.644-5.29-2.760 1.01-4.84-3.18-5.568 5.29zm7.644-5.29c.864 1.49 1.314 3.33 1.644 5.29h3.924c-.728-2.11-2.808-4.28-5.568-5.29z"/>
-            </svg>
-        </a>
-        
-        <a href="https://github.com/pablordata/proyecto-clima" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-        </a>
-    </div>
+            <!--
+                Un div para contener enlaces a redes sociales o sitios web relevantes.
+                class="social-links": Clase para estilizar esta sección.
+            -->
+                <!-- Enlace al sitio web -->
+                <a href="https://ucompensar.edu.co/programas/ingenieria-de-software-virtual/" class="social-link" title="Sitio Web" target="_blank" rel="noopener noreferrer">
+                <!--
+                    Un enlace (<a>).
+                    href: URL del enlace.
+                    class="social-link": Clase para estilizar el enlace.
+                    title="Sitio Web": Tooltip.
+                    target="_blank": Abre el enlace en una nueva pestaña/ventana.
+                    rel="noopener noreferrer": Medidas de seguridad y privacidad para target="_blank".
+                        "noopener" previene que la nueva página acceda a `window.opener`.
+                        "noreferrer" previene que se envíe la cabecera Referer a la nueva página.
+                -->
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <!--
+                        Icono SVG (Scalable Vector Graphics) para el enlace al sitio web.
+                        Los SVG son gráficos vectoriales que escalan bien y pueden ser estilizados con CSS.
+                        fill="currentColor": El color del icono será el color de texto actual del elemento padre.
+                        El path define la forma del icono (un globo terráqueo).
+                    -->
+                        <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 13.8h-3.924c-.33 1.96-.78 3.8-1.644 5.29 2.760-1.01 4.84-3.18 5.568-5.29zM12 22.2c-.99-1.805-1.78-4.064-2.133-6.4h4.266c-.353 2.336-1.143 4.595-2.133 6.4zM9.867 13.8c.353-2.335 1.143-4.595 2.133-6.4.99 1.805 1.78 4.065 2.133 6.4H9.867zm-1.511 2c-.864-1.49-1.314-3.33-1.644-5.29H2.788c.728 2.11 2.808 4.28 5.568 5.29zm-5.568-7.29h3.924c.33-1.96.78-3.8 1.644-5.29-2.760 1.01-4.84-3.18-5.568 5.29zm7.644-5.29c.864 1.49 1.314 3.33 1.644 5.29h3.924c-.728-2.11-2.808-4.28-5.568-5.29z"/>
+                    </svg>
+                </a>
+                
+                <a href="https://github.com/pablordata/proyecto-clima" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
+                <!--
+                    Otro enlace, esta vez a un repositorio de GitHub.
+                    Atributos similares al enlace anterior.
+                -->
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <!--
+                        Icono SVG para GitHub (el logo de Octocat).
+                        El path define la forma del icono.
+                    -->
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+            </div>
         </header>
 
         <div class="weather-section">
+        <!--
+            Un div que contiene la funcionalidad principal de la aplicación: el pronóstico del tiempo.
+            class="weather-section": Clase para estilizar esta sección.
+        -->
             <div class="location-input">
+            <!--
+                Un div para los elementos de entrada de la ubicación (ciudad).
+                class="location-input": Clase para estilizar estos controles.
+            -->
                 <input type="text" id="cityInput" placeholder="Ingresa una ciudad (ej: Bogotá, Madrid, Londres)">
+                <!--
+                    Campo de entrada de texto para que el usuario ingrese el nombre de una ciudad.
+                    type="text": Tipo de entrada.
+                    id="cityInput": Identificador único para que JavaScript pueda leer su valor.
+                    placeholder: Texto de ejemplo que se muestra cuando el campo está vacío.
+                -->
                 <button onclick="getWeather()">🔍 Buscar Clima</button>
+                <!--
+                    Botón para iniciar la búsqueda del clima.
+                    onclick="getWeather()": Ejecuta la función JavaScript 'getWeather()' al hacer clic.
+                    Incluye un emoji de lupa.
+                -->
             </div>
 
             <div id="weatherData">
+            <!--
+                Un div que actuará como contenedor para mostrar los datos del clima recuperados.
+                id="weatherData": Identificador único para que JavaScript pueda insertar contenido aquí.
+                Inicialmente contiene un mensaje de carga o instrucción.
+            -->
                 <!-- El contenido del clima se insertará aquí por JavaScript -->
+                <!-- Comentario HTML que indica el propósito de este div. -->
                 <div class="loading">
+                <!--
+                    Un div con la clase "loading", que muestra un mensaje inicial.
+                    Este mensaje instruye al usuario y menciona la API de Open-Meteo.
+                -->
                     🌍 Ingresa una ciudad para ver el pronóstico del tiempo usando la API de Open-Meteo
                 </div>
             </div>
@@ -81,5 +233,16 @@
     </div>
 
     <script src="js/script.js"></script>
+    <!--
+        Vincula un archivo JavaScript externo al documento HTML.
+        src="js/script.js": Especifica la ruta al archivo JavaScript. Se espera que haya una carpeta "js"
+        y dentro de ella un archivo "script.js".
+        Este script contendrá la lógica para:
+        - 'toggleTheme()': Cambiar el tema de la página.
+        - 'getWeather()': Obtener la ciudad del input, hacer una solicitud a la API de Open-Meteo,
+                          y mostrar los resultados en el div #weatherData.
+        Se coloca al final del <body> para asegurar que el DOM (Document Object Model) esté completamente
+        cargado antes de que el script intente manipularlo.
+    -->
 </body>
 </html>
