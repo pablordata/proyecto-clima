@@ -109,6 +109,6 @@ Este proyecto es para fines educativos. Puedes usar el código libremente. Si de
 
 ## 📸 Screenshot
 
-![Image Alt]([ruta/a/tu/screenshot.png](https://github.com/pablordata/proyecto-clima/blob/202be952ca89688bacc9214c6a506fd3ed8a507f/assets/tema-claro.png))
+![Image Alt](https://github.com/pablordata/proyecto-clima/blob/202be952ca89688bacc9214c6a506fd3ed8a507f/assets/tema-claro.png)
 
 
