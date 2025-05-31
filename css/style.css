@@ -1,440 +1,389 @@
-/**
- * @file style.css
- * @description Hoja de estilos principal para la aplicación de pronóstico del tiempo.
- *              Define los estilos base, la apariencia de los componentes y el modo oscuro.
- */
-
-/* --- Reset Básico y Estilos Globales --- */
-
 * {
-    margin: 0; /* Elimina márgenes por defecto de todos los elementos */
-    padding: 0; /* Elimina rellenos por defecto de todos los elementos */
-    box-sizing: border-box; /* El padding y border no incrementan el tamaño total del elemento */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal para la página */
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Fondo degradado por defecto (modo claro) */
-    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
-    color: #333; /* Color de texto por defecto (para modo claro) */
-    /* Transiciones suaves para el cambio de tema se aplican aquí o en elementos específicos si es necesario */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
 }
 
 .container {
-    max-width: 1200px; /* Ancho máximo del contenido principal */
-    margin: 0 auto; /* Centra el contenedor en la página */
-    padding: 20px; /* Espaciado interno para el contenedor */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* --- Estilos del Encabezado --- */
-
 .header {
-    text-align: center; /* Centra el texto dentro del encabezado */
-    margin-bottom: 30px; /* Espacio debajo del encabezado */
-    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente (efecto "glassmorphism") */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo detrás del elemento */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 30px; /* Espaciado interno */
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Sombra suave para dar profundidad */
-    position: relative; /* Necesario para posicionar absolutamente el botón de tema */
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    position: relative;
 }
 
 .theme-toggle {
-    position: absolute; /* Posicionamiento absoluto relativo al '.header' */
-    top: 20px; /* Distancia desde la parte superior del header */
-    right: 20px; /* Distancia desde la parte derecha del header */
-    background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
-    border: none; /* Sin borde */
-    border-radius: 50%; /* Forma circular */
-    width: 50px; /* Ancho del botón */
-    height: 50px; /* Alto del botón */
-    cursor: pointer; /* Cambia el cursor a mano al pasar sobre él */
-    display: flex; /* Permite centrar el contenido (icono) con align-items y justify-content */
-    align-items: center; /* Centra el ícono verticalmente */
-    justify-content: center; /* Centra el ícono horizontalmente */
-    font-size: 1.5rem; /* Tamaño del ícono (emoji) */
-    color: white; /* Color del ícono */
-    transition: all 0.3s ease; /* Transición suave para todos los cambios */
-    backdrop-filter: blur(5px); /* Desenfoque sutil del fondo del botón */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.3); /* Fondo ligeramente más opaco al pasar el cursor */
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
 }
 
 .header h1 {
-    color: white; /* Color del título principal */
-    font-size: 2.5rem; /* Tamaño del título principal */
-    margin-bottom: 10px; /* Espacio debajo del título */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Sombra de texto para mejorar legibilidad */
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-/* --- Estilos de Información del Profesor --- */
-
 .professor-info {
-    display: flex; /* Organiza los elementos hijos en una fila */
-    align-items: center; /* Alinea los elementos verticalmente al centro */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    gap: 20px; /* Espacio entre la foto y los detalles del profesor */
-    margin: 20px 0; /* Márgenes verticales */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 .professor-photo {
-    width: 80px; /* Ancho de la "foto" */
-    height: 80px; /* Alto de la "foto" */
-    border-radius: 50%; /* Forma circular */
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4); /* Fondo degradado para la foto */
-    display: flex; /* Para centrar las iniciales */
-    align-items: center; /* Centra verticalmente las iniciales */
-    justify-content: center; /* Centra horizontalmente las iniciales */
-    font-size: 2rem; /* Tamaño de las iniciales */
-    color: white; /* Color de las iniciales */
-    font-weight: bold; /* Texto en negrita */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para la foto */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .professor-details {
-    color: white; /* Color del texto de los detalles */
-    text-align: left; /* Alineación del texto a la izquierda (por defecto si no está en flex-direction column) */
+    color: white;
+    text-align: left;
 }
 
 .professor-name {
-    font-size: 1.4rem; /* Tamaño del nombre del profesor */
-    font-weight: bold; /* Nombre en negrita */
-    margin-bottom: 5px; /* Espacio debajo del nombre */
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .professor-subject {
-    font-size: 1.1rem; /* Tamaño de la asignatura */
-    opacity: 0.9; /* Ligera transparencia para la asignatura */
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
 
-/* --- Estilos de Sección de Estudiantes --- */
-
 .student-section {
-    margin-top: 25px; /* Espacio arriba de la sección */
-    padding-top: 20px; /* Relleno superior */
-    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria semitransparente */
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .students-grid {
-    display: grid; /* Usa CSS Grid para el layout */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas:
-                                                                  se ajustan automáticamente,
-                                                                  cada columna tiene un mínimo de 200px
-                                                                  y un máximo de 1 fracción del espacio disponible. */
-    gap: 20px; /* Espacio entre los elementos de la cuadrícula */
-    justify-items: center; /* Centra los ítems dentro de sus celdas de la cuadrícula */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
 }
 
 .student-info {
-    display: flex; /* Organiza foto y detalles */
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: center; /* Centra los elementos horizontalmente */
-    gap: 10px; /* Espacio entre la foto y los detalles del estudiante */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .student-photo {
-    width: 60px; /* Ancho de la "foto" del estudiante */
-    height: 60px; /* Alto de la "foto" del estudiante */
-    border-radius: 50%; /* Forma circular */
-    display: flex; /* Para centrar las iniciales */
-    align-items: center; /* Centra verticalmente las iniciales */
-    justify-content: center; /* Centra horizontalmente las iniciales */
-    font-size: 1.3rem; /* Tamaño de las iniciales */
-    color: white; /* Color de las iniciales */
-    font-weight: bold; /* Texto en negrita */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para la foto */
-    transition: transform 0.3s ease; /* Transición suave para el hover */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
 }
 
 .student-photo:hover {
-    transform: scale(1.1); /* Aumenta tamaño al pasar el cursor */
+    transform: scale(1.1);
 }
 
 .student-1 {
-    background: linear-gradient(45deg, #4ecdc4, #44a08d); /* Fondo degradado para el primer estudiante */
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
 }
 
 .student-2 {
-    background: linear-gradient(45deg, #ff6b6b, #ee5a52); /* Fondo degradado para el segundo estudiante */
+    background: linear-gradient(45deg, #ff6b6b, #ee5a52);
 }
 
 .student-details {
-    color: white; /* Color del texto de los detalles */
-    text-align: left; /* Alineación del texto a la izquierda (se sobreescribirá en responsive si es necesario) */
+    color: white;
+    text-align: left;
 }
 
 .student-name {
-    font-size: 1.1rem; /* Tamaño del nombre del estudiante */
-    font-weight: bold; /* Nombre en negrita */
-    margin-bottom: 3px; /* Espacio debajo del nombre */
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 3px;
 }
 
-.student-id { /* Estilo para el ID del estudiante (no presente en el HTML, pero definido aquí) */
+.student-id {
     font-size: 0.9rem;
     opacity: 0.8;
 }
 
-/* --- Estilos de Enlaces Sociales --- */
-
 .social-links {
-    display: flex; /* Organiza los enlaces en una fila */
-    gap: 15px; /* Espacio entre los iconos de enlaces */
-    justify-content: center; /* Centra los enlaces horizontalmente */
-    margin-top: 15px; /* Espacio arriba de los enlaces */
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .social-link {
-    display: flex; /* Para centrar el SVG dentro del enlace */
-    align-items: center; /* Centra verticalmente el SVG */
-    justify-content: center; /* Centra horizontalmente el SVG */
-    width: 45px; /* Ancho del enlace */
-    height: 45px; /* Alto del enlace */
-    border-radius: 50%; /* Forma circular */
-    background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
-    color: white; /* Color del icono SVG (si usa currentColor) */
-    text-decoration: none; /* Quita el subrayado de los enlaces */
-    transition: all 0.3s ease; /* Transición suave para todos los cambios */
-    backdrop-filter: blur(5px); /* Desenfoque sutil del fondo del enlace */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .social-link:hover {
-    background: rgba(255, 255, 255, 0.3); /* Fondo más opaco al pasar el cursor */
-    transform: translateY(-3px); /* Mueve el enlace ligeramente hacia arriba */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Añade sombra al pasar el cursor */
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* --- Estilos de la Sección del Clima --- */
-
 .weather-section {
-    background: rgba(255, 255, 255, 0.95); /* Fondo casi opaco blanco */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 30px; /* Espaciado interno */
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Sombra para la sección */
-    margin-bottom: 20px; /* Espacio debajo de la sección del clima */
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    margin-bottom: 20px;
 }
 
 .location-input {
-    display: flex; /* Organiza input y botón en una fila */
-    gap: 10px; /* Espacio entre input y botón */
-    margin-bottom: 25px; /* Espacio debajo del input de ubicación */
-    flex-wrap: wrap; /* Permite que el botón pase abajo en pantallas pequeñas */
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .location-input input, .location-input button {
-    padding: 12px 20px; /* Relleno interno para input y botón */
-    border: none; /* Sin borde */
-    border-radius: 10px; /* Bordes redondeados */
-    font-size: 1rem; /* Tamaño de fuente */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
 .location-input input {
-    flex: 1; /* El input ocupa el espacio restante */
-    min-width: 200px; /* Ancho mínimo para el input antes de que se envuelva */
-    background: #f8f9fa; /* Fondo claro para el input */
-    border: 2px solid #e9ecef; /* Borde sutil */
+    flex: 1;
+    min-width: 200px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
 }
 
 .location-input button {
-    background: linear-gradient(45deg, #667eea, #764ba2); /* Fondo degradado para el botón */
-    color: white; /* Color del texto del botón */
-    cursor: pointer; /* Cursor de mano */
-    transition: all 0.3s ease; /* Transición suave */
-    font-weight: bold; /* Texto en negrita */
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
 }
 
 .location-input button:hover {
-    transform: translateY(-2px); /* Mueve el botón ligeramente hacia arriba */
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4); /* Sombra al pasar el cursor */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* --- Estilos del Clima Actual --- */
-
 .current-weather {
-    background: linear-gradient(135deg, #667eea, #764ba2); /* Fondo degradado igual al body (o un tema similar) */
-    color: white; /* Color de texto blanco para contraste */
-    border-radius: 15px; /* Bordes redondeados */
-    padding: 25px; /* Relleno interno */
-    margin-bottom: 25px; /* Espacio debajo del clima actual */
-    text-align: center; /* Centra el contenido */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 .current-temp {
-    font-size: 3rem; /* Tamaño grande para la temperatura actual */
-    font-weight: bold; /* Temperatura en negrita */
-    margin: 10px 0; /* Márgenes verticales */
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 .weather-details {
-    display: grid; /* Usa CSS Grid para los detalles (humedad, precipitación, etc.) */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
-    gap: 15px; /* Espacio entre las tarjetas de detalles */
-    margin-top: 20px; /* Espacio arriba de los detalles */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.weather-card { /* Tarjeta individual para un detalle (humedad, viento, etc.) */
-    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 15px; /* Relleno interno */
-    text-align: center; /* Centra el texto */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque del fondo */
+.weather-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(5px);
 }
-
-/* --- Estilos del Pronóstico --- */
 
 .forecast {
-    display: grid; /* Usa CSS Grid para las tarjetas de pronóstico */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas responsivas, más estrechas que weather-details */
-    gap: 15px; /* Espacio entre las tarjetas de pronóstico */
-    margin-top: 20px; /* Espacio arriba de la sección de pronóstico */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
 }
 
-.forecast-card { /* Tarjeta individual para un día del pronóstico */
-    background: #f8f9fa; /* Fondo claro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Relleno interno */
-    text-align: center; /* Centra el texto */
-    transition: all 0.3s ease; /* Transición suave para hover */
-    border: 2px solid #e9ecef; /* Borde sutil */
+.forecast-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #e9ecef;
 }
 
 .forecast-card:hover {
-    transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba al pasar el cursor */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Sombra al pasar el cursor */
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-/* --- Estilos de Carga y Error --- */
-
 .loading {
-    text-align: center; /* Centra el texto de carga */
-    padding: 40px; /* Relleno */
-    color: #666; /* Color de texto gris */
-    font-size: 1.2rem; /* Tamaño de fuente */
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.2rem;
 }
 
 .error {
-    background: #ff6b6b; /* Fondo rojo para errores */
-    color: white; /* Texto blanco para contraste */
-    padding: 15px; /* Relleno */
-    border-radius: 10px; /* Bordes redondeados */
-    margin: 10px 0; /* Márgenes verticales */
-    text-align: center; /* Centra el texto */
+    background: #ff6b6b;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-align: center;
 }
 
-/* --- Modo Oscuro --- */
-
-body.dark-mode { /* Estilos que se aplican cuando el body tiene la clase 'dark-mode' */
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /* Fondo degradado oscuro */
-    /* El color de texto general se cambiará en elementos específicos si es necesario,
-       o se puede establecer aquí un color de texto claro por defecto para el modo oscuro. */
+/* Modo Oscuro */
+body.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
 body.dark-mode .header {
-    background: rgba(0, 0, 0, 0.3); /* Fondo más oscuro y semitransparente para el header */
-    /* Los textos dentro del header (h1, professor-info, student-info) ya son blancos,
-       por lo que no necesitan cambios directos aquí, a menos que se quiera afinar. */
+    background: rgba(0, 0, 0, 0.3);
 }
 
 body.dark-mode .weather-section {
-    background: rgba(30, 30, 30, 0.95); /* Fondo muy oscuro, casi opaco para la sección del clima */
-    color: #e0e0e0; /* Color de texto claro general para esta sección en modo oscuro */
+    background: rgba(30, 30, 30, 0.95);
+    color: #e0e0e0;
+}
+body.dark-mode .weather-section h3 { /* Para que el título del pronóstico cambie de color */
+    color: #e0e0e0 !important;
 }
 
-body.dark-mode .weather-section h3 { /* Asegura que el título "Pronóstico de 7 días" cambie de color */
-    color: #e0e0e0 !important; /* Usamos !important si el estilo en línea de JS interfiere */
-}
 
 body.dark-mode .location-input input {
-    background: #2a2a2a; /* Fondo oscuro para el input */
-    border-color: #404040; /* Borde más oscuro */
-    color: #e0e0e0; /* Color de texto claro para el input */
+    background: #2a2a2a;
+    border-color: #404040;
+    color: #e0e0e0;
 }
 
 body.dark-mode .location-input input::placeholder {
-    color: #888; /* Color más claro para el placeholder en modo oscuro */
+    color: #888;
 }
-
-/* El botón de búsqueda ya tiene un fondo degradado que puede funcionar bien,
-   o podría ajustarse si es necesario. */
-
-/* Los elementos dentro de .current-weather ya tienen texto blanco,
-   y .weather-card usa backdrop-filter, por lo que sus fondos se adaptan. */
 
 body.dark-mode .forecast-card {
-    background: #2a2a2a; /* Fondo oscuro para las tarjetas de pronóstico */
-    border-color: #404040; /* Borde más oscuro */
-    color: #e0e0e0; /* Color de texto principal claro */
+    background: #2a2a2a;
+    border-color: #404040;
+    color: #e0e0e0;
 }
 
-body.dark-mode .forecast-card p strong { /* Asegura que el texto en negrita (temperaturas) sea visible */
+body.dark-mode .forecast-card p strong { /* Para que el texto en negrita se vea bien */
     color: #e0e0e0; 
 }
-body.dark-mode .forecast-card p { /* Para que el texto secundario (precipitación, viento) sea visible */
-    color: #aaa !important; /* Un gris más claro, !important para sobreescribir estilos en línea si los hubiera */
+body.dark-mode .forecast-card p { /* Para que el texto secundario se vea bien */
+    color: #aaa !important;
 }
 
+
 body.dark-mode .forecast-card:hover {
-    background: #333; /* Fondo ligeramente más claro al pasar el cursor en modo oscuro */
+    background: #333;
 }
 
 body.dark-mode .loading {
-    color: #ccc; /* Color de texto más claro para el mensaje de carga */
+    color: #ccc;
 }
 
-/* El mensaje de error (.error) ya tiene un fondo de color y texto blanco,
-   que debería contrastar bien. Si no, se ajustaría aquí. */
-
-/* --- Media Queries para Responsividad --- */
-
-@media (max-width: 768px) { /* Estilos para pantallas de 768px de ancho o menos (tablets y móviles) */
+@media (max-width: 768px) {
     .professor-info {
-        flex-direction: column; /* Apila la foto y detalles del profesor verticalmente */
-        text-align: center; /* Centra el texto cuando están en columna */
+        flex-direction: column;
+        text-align: center;
     }
 
     .professor-details {
-        text-align: center; /* Asegura que los detalles del profesor estén centrados */
+        text-align: center;
     }
 
     .students-grid {
-        grid-template-columns: 1fr; /* Una sola columna para los estudiantes */
-        gap: 15px; /* Reduce el espacio entre estudiantes */
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
     .student-details {
-        text-align: center; /* Centra los detalles del estudiante */
+        text-align: center;
     }
 
     .header h1 {
-        font-size: 2rem; /* Reduce el tamaño del título principal */
+        font-size: 2rem;
     }
 
     .current-temp {
-        font-size: 2.5rem; /* Reduce el tamaño de la temperatura actual */
+        font-size: 2.5rem;
     }
 
     .theme-toggle {
-        top: 10px; /* Acerca el botón de tema a la esquina */
+        top: 10px;
         right: 10px;
-        width: 40px; /* Reduce el tamaño del botón de tema */
+        width: 40px;
         height: 40px;
-        font-size: 1.2rem; /* Reduce el tamaño del ícono del tema */
+        font-size: 1.2rem;
     }
-    
-    /* Ajustes adicionales para .weather-details y .forecast si es necesario,
-       aunque `auto-fit` con `minmax` ya debería manejarlos bien. */
 }
 
-/* --- Animaciones --- */
-
-/* Animación de Spin para el icono de carga */
+/* Animación de Spin para el loading */
 @keyframes spin {
-    from { transform: rotate(0deg); } /* Estado inicial de la rotación */
-    to { transform: rotate(360deg); }   /* Estado final de la rotación (una vuelta completa) */
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
-
-/* La clase .loading en el HTML ya tiene un div con style="animation: spin 1s linear infinite;"
-   que utiliza esta animación. */
